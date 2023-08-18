@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div{
+            width: 500px;
+            height: auto;
+            margin-left: 200px;
+            background-color: aquamarine;
+            margin-top: 50px;
+            align-items: center;
+        }
+        #imj{
+            
+            width:150px;
+            height: 150px;
+           
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="div">
+     
+     <div class="mySlides">
+        <div class="numbertext">0</div>
+        <img src="" style="width:100%" id="img">
+      </div>
+     
+      
+     <button class="forward">forward</button>
+     <button class="backward">backward</button>
+    
+     <script>
+let arr=["./n2.jpg","./n1.jpg","./nature.jpg"];
+let img=document.querySelector('#img');
+let forward=document.querySelector('.forward')
+
+
+var len=0;
+img.src=arr[len];
+function slide(){
+    len+=1
+    img.src=arr[len];
+
+    if(len>=arr.length){
+        len=0;
+        img.src=arr[len];
+    }
+document.querySelector('.numbertext').innerText=len;
+    }
+forward.onclick=slide;
+
+let backward=document.querySelector('.backward')
+var len=0;
+img.src=arr[len];
+function slider(){
+    len-=1;
+    img.src=arr[len];
+    if(len<0){
+        len=arr.length-1;
+        img.src=arr[len];
+    }
+    document.querySelector('.numbertext').innerText=len;
+}
+
+backward.onclick=slider;
+     </script>
+
+    </div>
+   
+</body>
+</html>
